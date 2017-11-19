@@ -53,11 +53,11 @@ app.use(passport.session());
 // require("./routes/api-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser( (user, done) => {
     done(null, user);
 });
 
-passport.deserializeUser(function(user, done) {
+passport.deserializeUser( (user, done) => {
     db.User
         .findOne({ _id: user.userID })
             .then((user, error) => {
