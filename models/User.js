@@ -29,9 +29,6 @@ var UserSchema = new Schema({
       "Password should be longer."
     ]
   },
-  keys: {
-    type: Array
-  },
   // `date` must be of type Date. The default value is the current date
   userCreated: {
     type: Date,

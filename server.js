@@ -28,7 +28,7 @@ app.use(express.static("public"));
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/guitarKey";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/passportTest";
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, {
@@ -72,7 +72,7 @@ passport.deserializeUser(function(user, done) {
 });
 
 passport.use(new LocalStrategy({
-        usernameField: 'email'
+        usernameField: 'email'//change default username to email
     },
     (email, password, done) => {
 
