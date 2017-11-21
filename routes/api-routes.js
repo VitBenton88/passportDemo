@@ -50,9 +50,10 @@ module.exports = (app) => {
 
                             if (error) throw (error);
 
-                            const userId = signedInUser._id;
-
-                            req.login(userId, () => {
+                            console.log("NEW USER CREATED: ");
+                            console.log(signedInUser);
+                            //deserialize config is expecting user.userID to be accessible
+                            req.login({userID: signedInUser._id}, (err) => {
 
                                 res.redirect("/");
 
